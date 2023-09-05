@@ -27,6 +27,9 @@ public class Examples {
    }
 
    public static int findMinimumValue(int [] arr){
+       if(arr==null || arr.length ==0){
+           throw new IllegalArgumentException("no supplied or input not compatible");
+       }
        int min = arr[0];
        for (int i=0; i< arr.length;i++){
         if(arr[i]<min){
@@ -34,5 +37,18 @@ public class Examples {
         }
        }
        return min;
+   }
+   public static int findSecondMax(int[] arr){
+       int max = Integer.MIN_VALUE;
+       int secondMax = Integer.MIN_VALUE;
+       for(int i=0; i<arr.length; i++) {
+           if(arr[i]>max){
+               secondMax=max;
+               max= arr[i];
+           } else if (arr[i]>secondMax && arr[i]!=max) {
+               secondMax=arr[i];
+           }
+       }
+return secondMax;
    }
 }
