@@ -83,4 +83,13 @@ return secondMax;
        }
        return newArray;
     }
+    //How to find the missing number in an array
+  public int findMissingValue(int [] arr){
+      int n = arr.length + 1;
+     int sum = n * (n+1)/2;
+      for(int i=0;i< arr.length;i++){
+         sum = sum - i;
+      }
+      return sum;
+  }
 }
