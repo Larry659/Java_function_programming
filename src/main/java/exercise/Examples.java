@@ -2,6 +2,8 @@ package exercise;
 
 import java.util.Arrays;
 
+
+
 public class Examples {
     public static void main(String[] args) {
 // String[] names = {"wale","ade","shade","ronke","biola"};
@@ -15,6 +17,8 @@ public class Examples {
         System.out.println(Arrays.toString(reverseArray(myNum)));
         System.out.println(findMinimumValue(myNum));
         System.out.println(Arrays.toString(movesZerosToTheEnd(sizes)));
+        System.out.println(Arrays.toString("lanre".split("")));
+        System.out.println(checkPalindrome("Hannah"));
    }
 /*Algorithm to reverse an array*/
    public static int [] reverseArray(int [] arr){
@@ -92,4 +96,18 @@ return secondMax;
       }
       return sum;
   }
+  //How to check if a string is palindrome
+    public static Boolean checkPalindrome(String word){
+       String [] splittedWord = word.toLowerCase().split("");
+       String [] newWord = new String[splittedWord.length];
+       int newPos = 0;
+       for(int i= splittedWord.length-1; i>=0; i--){
+           newWord[newPos] = splittedWord[i];
+           newPos = newPos + 1;
+       }
+       if(Arrays.equals(newWord, splittedWord)){
+           return true;
+       }
+       return false;
+    }
 }
