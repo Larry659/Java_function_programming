@@ -38,6 +38,10 @@ public class Examples {
         int[] check = {3, 2, 2, 3};
         int val = 3;
         int[] test = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+       int[] arr1 = {3,2,3};
+        int[] arr2 ={2,2,1,1,1,2,2};
+        int[] testArr={2,2,1,3,1,1,4,1,1,5,1,1,6};
+        int[] testArr2={1,2,3,4,5,6,7};
         //System.out.println(Arrays.toString(reverseArray(myNum)));
 
         //System.out.println(findMinimumValue(myNum));
@@ -45,8 +49,11 @@ public class Examples {
         // System.out.println(Arrays.toString("lanre".split("")));
         //System.out.println(checkPalindrome("Hannah"));
         // System.out.println(Arrays.toString(mergeSortedArray(nums1,3)));
-        System.out.println(Arrays.toString(removeElement(check, 3)));
-        System.out.println(Arrays.toString(removeDuplicate(test)));
+        //System.out.println(Arrays.toString(removeElement(check, 3)));
+        //System.out.println(Arrays.toString(removeDuplicate(test)));
+
+       // System.out.println( getHighestFrequency(testArr));
+        System.out.println(Arrays.toString(rotateArray(testArr2,1)));
     }
 
     /*Algorithm to reverse an array*/
@@ -201,5 +208,49 @@ It does not matter what you leave beyond the returned k (hence they are undersco
         }
         return newArray;
     }
+    /*Given an array nums of size n, return the majority element.
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+Example 1:
+Input: nums = [3,2,3]
+Output: 3
+Example 2:
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+ */
+ public static int getHighestFrequency(int[] arr){
+     int half = arr.length/2;
+//     int value1 = arr[0];
+//     int countValue1=0; int countValue2=0;
+//     int value2=0;
+//     for (int i=0; i< arr.length; i++){
+//         if(arr[i]==value1){
+//             countValue1 +=1;
+//         }else {
+//             value2=arr[i];
+//             countValue2 +=1;
+//         }
+     Arrays.sort(arr);
+     int n = arr.length;
+     return arr[half];
 
+     }
+/*Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+
+
+Example 1:
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4]*/
+public static int[] rotateArray(int [] arr, int k){
+    int[] newNum = Arrays.copyOf(arr,arr.length);
+    for(int i =0; i<k && k<= arr.length;i++){
+        newNum[i]=arr[arr.length -1];
+    }
+    return arr;
 }
+    }

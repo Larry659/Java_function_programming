@@ -1,9 +1,25 @@
 package exercise;
 
-import java.util.LinkedList;
+import java.util.*;
 
 public class LinkedListPract {
     public  static void main(String [] arg){
+        List<Student> myStudent = List.of(
+                new Student("lanre",24,"che"),
+                new Student("kunle",34,"eee"),
+                new Student("wale",19,""),
+                new Student("lanre",24,"che")
+        );
+        Integer age = 12;
+        HashSet<String> players = new HashSet<>();
+        players.add("lanre");
+        players.add("kunle");
+        players.add("lanre");
+        players.add("wale");
+        System.out.println(players);//does not allow duplicate
+        Map<String,String> clubs = new HashMap<>();
+        clubs.put("barca","messi");
+        clubs.put("barca","xavi");//does not allow duplicate
         /*LinkedList implements the java.utils.List interface, and it also implements the QUEUE and STACK*/
         LinkedList<String> placesToVisit = new LinkedList<>();
         placesToVisit.add("paris");
@@ -17,7 +33,7 @@ public class LinkedListPract {
 
         //STACK method
         placesToVisit.push("ottawa");
-        System.out.println(placesToVisit);// this adds to the last
+       // System.out.println(placesToVisit);// this adds to the last
         printPlaces(placesToVisit);
     }
     public static void addPlacesToList(LinkedList<String> list){
