@@ -6,7 +6,7 @@ public class Student {
     private String state;
 
     private String department;
-    private String country;
+
     public String getState() {
         return state;
     }
@@ -17,26 +17,20 @@ public class Student {
 
     public Student (){}
 
-    public String getCountry() {
-        return country;
-    }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+
+
 
     public String getName() {
         return name;
     }
 
 
-    public Student(String name, Integer age, String state, String country, String department, String department1) {
+    public Student(String name, Integer age, String state, String department) {
         this.name = name;
         this.age = age;
         this.state = state;
-        this.country = country;
         this.department = department;
-        this.department = department1;
     }
 
     public void setName(String name) {
@@ -72,7 +66,6 @@ public class Student {
                 ", age=" + age +
                 ", state='" + state + '\'' +
                 ", department='" + department + '\'' +
-                ", country='" + country + '\'' +
                 '}';
     }
 }
